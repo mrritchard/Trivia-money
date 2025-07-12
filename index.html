@@ -2,49 +2,111 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>لعبة تريفيا</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Cairo', sans-serif;
       direction: rtl;
       text-align: center;
       padding: 20px;
-      background: #f2f2f2;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
     }
     .question-box {
-      background: white;
-      padding: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px;
       margin: 20px auto;
-      border-radius: 10px;
-      max-width: 500px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      max-width: 550px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+    .question-box:hover {
+      transform: scale(1.05);
     }
     .question {
-      font-size: 24px;
-      margin-bottom: 10px;
+      font-size: 28px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
     }
     .answers button {
       display: block;
-      margin: 10px auto;
-      padding: 10px 20px;
-      font-size: 18px;
+      margin: 12px auto;
+      padding: 12px 30px;
+      font-size: 20px;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
+      background: rgba(255, 255, 255, 0.3);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .answers button:hover {
+      background: #ffcc00;
+      color: #333;
+      transform: scale(1.05);
+    }
+    .answers button:active {
+      transform: scale(0.95);
     }
     #timer {
-      font-size: 20px;
-      color: red;
-      margin-bottom: 10px;
+      font-size: 40px;
+      color: #ffdd57;
+      margin-bottom: 15px;
+      font-weight: 800;
+      text-shadow: 0 0 12px #ffa500;
     }
     #pay-section {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 500px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 550px;
       margin: 20px auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 20px;
+      font-weight: 600;
+    }
+    #pay-section button {
+      background: #ffcc00;
+      color: #333;
+      padding: 12px 40px;
+      font-size: 22px;
+      font-weight: 700;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(255, 204, 0, 0.7);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    #pay-section button:hover {
+      background: #ffdb4d;
+      transform: scale(1.1);
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 32px;
+      font-weight: 800;
+      text-shadow: 0 0 20px #ffd700;
+      color: #ffff00;
+      user-select: none;
     }
   </style>
 </head>
